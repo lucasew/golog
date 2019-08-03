@@ -18,7 +18,7 @@ func NewLogger(handler golog_handler.LoggerHandler) DefaultLogger {
 
 func (l DefaultLogger) NewLogger(subcomponent string) DefaultLogger {
     return DefaultLogger{
-        handler: l.handler.NewLogger(subcomponent),
+        handler: l.handler.NewHandler(subcomponent),
     }
 }
 

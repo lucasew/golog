@@ -7,5 +7,5 @@ import (
 )
 
 var Default = golog_logger_default.NewLogger(
-    golog_handler_default.NewLogger(os.Stderr, ""),
+    golog_handler_default.NewHandler(os.Stderr, ""),
 )

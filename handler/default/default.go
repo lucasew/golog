@@ -12,7 +12,7 @@ type DefaultLogHandler struct {
     father *DefaultLogHandler;
 }
 
-func NewLogger(writter io.Writer, component string) DefaultLogHandler{
+func NewHandler(writter io.Writer, component string) DefaultLogHandler{
     return DefaultLogHandler{
         component: component,
         writter: writter,
@@ -37,7 +37,7 @@ func (h DefaultLogHandler) GetComponentName() string {
     return h.component
 }
 
-func (h DefaultLogHandler) NewLogger(subcomponent string) golog_handler.LoggerHandler {
+func (h DefaultLogHandler) NewHandler(subcomponent string) golog_handler.LoggerHandler {
     return DefaultLogHandler{
         component: subcomponent,
         writter: h.writter,
