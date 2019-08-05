@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
-var Default = golog_logger_default.NewLogger(
-	golog_handler_default.NewHandler(os.Stderr, ""),
+// Default Default logger already built for more out of the box experience
+var Default = ldefault.NewLogger(
+	hdefault.NewHandler(os.Stderr, ""),
 )

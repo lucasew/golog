@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	h := golog_handler_default.NewHandler(os.Stderr, "")
-	l := golog_logger_default.NewLogger(h)
-	f := golog_logger_filter.NewLogger(l, golog_logger_filter.LvlInfo)
+	h := hdefault.NewHandler(os.Stderr, "")
+	l := ldefault.NewLogger(h)
+	f := lfilter.NewLogger(l, lfilter.LvlInfo)
 	f.Info("Isto tem que aparecer")
 	f.Error("Isto também")
 	f.Verbose(0, "Já isto não")

@@ -1,5 +1,6 @@
-package golog_logger
+package logger
 
+// Logger handles log commands and generates the log string for a handler
 type Logger interface {
 	NewLogger(subcomponent string) Logger
 	Panic(str string, v ...interface{})
