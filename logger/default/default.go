@@ -2,6 +2,7 @@ package golog_logger_default
 
 import (
     "github.com/lucasew/golog/handler"
+    "github.com/lucasew/golog/logger"
     "fmt"
     "errors"
 )
@@ -16,7 +17,7 @@ func NewLogger(handler golog_handler.LoggerHandler) DefaultLogger {
     }
 }
 
-func (l DefaultLogger) NewLogger(subcomponent string) DefaultLogger {
+func (l DefaultLogger) NewLogger(subcomponent string) golog_logger.Logger {
     return DefaultLogger{
         handler: l.handler.NewHandler(subcomponent),
     }
