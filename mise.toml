@@ -1,0 +1,10 @@
+[tools]
+go = "1.23.0"
+golangci-lint = "1.60.1"
+
+[tasks]
+build = "go build ./..."
+test = "go test ./..."
+fmt = "go fmt ./..."
+lint = "golangci-lint run"
+ci = { depends = ["build", "lint", "test"] }
