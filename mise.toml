@@ -1,0 +1,13 @@
+[tools]
+go = "1.26.0"
+trunk = "1.3.4"
+node = "22.16.0"
+
+[tasks]
+lint = "trunk check"
+fmt = "trunk fmt"
+test = "go test ./..."
+codegen = "echo 'No codegen detected'"
+build = "go build ./..."
+install = "go mod download"
+ci = { depends = ["lint", "test", "build"] }
