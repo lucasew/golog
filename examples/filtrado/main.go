@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/lucasew/golog/handler/default"
-	"github.com/lucasew/golog/logger/default"
-	"github.com/lucasew/golog/logger/filter"
 	"os"
+
+	hconsole "github.com/lucasew/golog/handler/console"
+	lconsole "github.com/lucasew/golog/logger/console"
+	lfilter "github.com/lucasew/golog/logger/filter"
 )
 
 func main() {
-	h := hdefault.NewHandler(os.Stderr, "")
-	l := ldefault.NewLogger(h)
+	h := hconsole.NewHandler(os.Stderr, "")
+	l := lconsole.NewLogger(h)
 	f := lfilter.NewLogger(l, lfilter.LvlInfo)
 	f.Info("Isto tem que aparecer")
 	f.Error("Isto também")
